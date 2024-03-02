@@ -1,7 +1,7 @@
 @extends('pages.home.home')
 
 @section('laravel')
-    <section class="container mx-auto py-8">
+    <section class="mx-auto py-8">
         <div class="mx-auto bg-gray-900 rounded-lg shadow-md p-8 mb-8 shadow-2xl">
             <p class="text-lg mb-4 text-gray-300">O Laravel é um framework PHP poderoso e elegante para desenvolvimento web.
             </p>

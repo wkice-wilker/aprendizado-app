@@ -14,9 +14,11 @@
     @yield('home')
 
     {{-- Dashboad --}}
+
     {{-- paginas com controle de sessao --}}
 
     {{-- studies --}}
+    
     {{-- stage 1 = paginas com atividades --}}
     {{-- stage 2 = possívelmente interpretador de código --}}
     {{-- stage 3 = atividades com TDD para avaliação--}}

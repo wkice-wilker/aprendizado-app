@@ -10,7 +10,7 @@
 </head>
 <body class="bg-gray-800">
     <header class="bg-gray-900 text-gray-300 py-4">
-        <nav class="container mx-auto flex justify-between items-center">
+        <nav class="mx-auto flex justify-between items-center">
             <a href="/" class="text-xl font-bold">Aprendizado</a>
             <ul class="flex gap-8">
                 <li @if(request()->is('Docker')) class="text-green-400" @endif><a href="/Docker" class="hover:text-green-400">Docker</a></li>
