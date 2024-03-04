@@ -12,7 +12,7 @@
                 <li @if (request()->is('Arquitetura')) class="text-green-400" @endif><a href="/Arquitetura"
                         class="hover:text-green-400">Arquitetura</a></li>
                 <li @if (request()->is('Metodos')) class="text-green-400" @endif><a href="/Metodos"
-                        class="hover:text-green-400">Métodos</a></li>
+                        class="hover:text-green-400">Banco de dados</a></li>
             </ul>
             <div class="gap-8 hidden md:flex">
                 <a href="#" class="hover:text-green-400 py-2 px-4 bg-gray-800 rounded-md">Login</a>
