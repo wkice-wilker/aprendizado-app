@@ -8,17 +8,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-800">
+<body class="bg-gray-800 pt-24">
 
     {{-- home pages --}}
-    @yield('home')
+    @yield('home-page')
 
     {{-- Dashboad --}}
 
     {{-- paginas com controle de sessao --}}
 
     {{-- studies --}}
-    
+
     {{-- stage 1 = paginas com atividades --}}
     {{-- stage 2 = possívelmente interpretador de código --}}
     {{-- stage 3 = atividades com TDD para avaliação--}}
