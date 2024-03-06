@@ -28,9 +28,12 @@
                     funcionamento.
                     O Laravel segue o padrão MVC (Model-View-Controller), que é uma forma de organizar o código da
                     aplicação. Embora
-                    este projeto não siga essa abordagem e sim um outro modelo estrutural, o SOLID (clique aqui para saber
-                    mais sobre
-                    SOLID neste projeto), iremos explorar a maioria das funcionalidades do Laravel, garantindo que as
+                    este projeto siga essa abordagem, porem somaremos outro modelo estrutural, o SOLID
+                    <a href="/Arquitetura">
+                        (clique aqui para saber
+                        mais sobre
+                        SOLID neste projeto)
+                    </a>, iremos explorar a maioria das funcionalidades do Laravel, garantindo que as
                     interações dos
                     arquivos sejam funcionais, eficientes e seguras.
                 </p>
@@ -39,78 +42,92 @@
                 <ul class="text-gray-300">
                     <li class="mb-4">
                         <p class="text-green-400">Diretório:</p>
-                        <div class="flex flex-col">
-                            <div class="relative">
-                                <pre
-                                    class="w-full overflow-hidden font-medium bg-gray-800 text-gray-400 rounded-lg p-2 my-2 text-nowrap text-ellipsis pr-10"><code>├raiz (./)
-├── routes/
-├──├── web.php</code></pre>
-                            </div>
+                        <div class="flex flex-col relative">
+                            <x-card-view.code-view>
+├./
+├── /routes/
+├──├── /web.php
+                            </x-card-view.code-view>
                         </div>
                     </li>
                     <li class="mb-4">
                         <p class="text-green-400">Tipos de requisições:</p>
-                        <div class="flex flex-col">
-                            <div class="relative">
-                                <pre
-                                    class="w-full overflow-hidden font-medium bg-gray-800 text-gray-400 rounded-lg p-2 my-2 text-nowrap text-ellipsis pr-10"><code>Route::get(); Route::post(); Route::put(); Route::delete(); Route::patch();</code></pre>
-                                <button
-                                    class="absolute top-2 right-0 text-black text-center rounded-md px-4 h-10 cursor-pointer transition-colors duration-300 focus:bg-green-500"><i
-                                        class="fa-regular fa-copy text-gray-300"></i></button>
-                            </div>
+                        <div class="flex flex-col relative">
+                            <x-card-view.code-view>
+                                Route::get(); Route::post(); Route::put(); Route::delete(); Route::patch();
+                            </x-card-view.code-view>
+                            <x-.buttons.button-copy class="px-4 h-10" />
                         </div>
                     </li>
                     <li class="mb-4">
                         <p class="text-green-400">Realizando uma requisição que passará por um processo:</p>
-                        <div class="flex flex-col">
-                            <div class="relative">
-                                <pre
-                                    class="w-full overflow-hidden font-medium bg-gray-800 text-gray-400 rounded-lg p-2 my-2 text-nowrap text-ellipsis pr-10"><code>Route::get('/user', [UserController::class, 'metodo']);</code></pre>
-                                <button
-                                    class="absolute top-2 right-0 text-black text-center rounded-md px-4 h-10 cursor-pointer transition-colors duration-300 focus:bg-green-500"><i
-                                        class="fa-regular fa-copy text-gray-300"></i></button>
-                            </div>
+                        <div class="flex flex-col relative">
+                            <x-card-view.code-view>
+use App\Http\Controllers\UserController;
+
+Route::get('/user', [UserController::class, 'metodo']);
+                            </x-card-view.code-view>
+                            <x-.buttons.button-copy class="px-4 h-10" />
                         </div>
                     </li>
                     <li class="mb-4">
                         <p class="text-green-400">Realizando uma requisição que retornará uma página:</p>
-                        <div class="flex flex-col">
-                            <div class="relative">
-                                <pre
-                                    class="w-full overflow-hidden font-medium bg-gray-800 text-gray-400 rounded-lg p-2 my-2 text-nowrap text-ellipsis pr-10"><code>Route::get('/rota', function () {
-return view('nome_da_view');
-    });</code></pre>
-                                <button
-                                    class="absolute top-2 right-0 text-black text-center rounded-md px-4 h-10 cursor-pointer transition-colors duration-300 focus:bg-green-500"><i
-                                        class="fa-regular fa-copy text-gray-300"></i></button>
-                            </div>
+                        <div class="flex flex-col relative">
+                            <x-card-view.code-view>
+Route::get('/rota', function () {
+    return view('nome_da_view');
+});
+                            </x-card-view.code-view>
+                            <x-.buttons.button-copy class="px-4 h-10" />
+                        </div>
+                    </li>
+                </ul>
+                <h5 class="text-xl underline font-bold mb-2 text-gray-300">Middlewae:</h5>
+                <ul class="text-gray-300">
+                    <li class="mb-4">
+                        <p class="text-green-400">Método de contrução automática de uma classe Middleware pelo laravel:</p>
+                        <div class="flex flex-col relative">
+                            <x-card-view.code-view>
+                                php artisan make:middleware Nome_do_middleware
+                            </x-card-view.code-view>
+                            <x-.buttons.button-copy class="px-4 h-10" />
                         </div>
                     </li>
                     <li class="mb-4">
                         <p class="text-green-400">Utilizando Middleware:</p>
-                        <div class="flex flex-col">
-                            <div class="relative">
-                                <pre
-                                    class="w-full overflow-hidden font-medium bg-gray-800 text-gray-400 rounded-lg p-2 my-2 text-nowrap text-ellipsis pr-10"><code>Route::get('/profile', function () {
+                        <div class="flex flex-col relative">
+                            <x-card-view.code-view>
+use App\Http\Middleware\Authenticate;
+
+Route::get('/profile', function () {
     // ...
 })->middleware(Authenticate::class);
-                                </code></pre>
-                                <button
-                                    class="absolute top-2 right-0 text-black text-center rounded-md px-4 h-10 cursor-pointer transition-colors duration-300 focus:bg-green-500"><i
-                                        class="fa-regular fa-copy text-gray-300"></i></button>
-                            </div>
-                            <div class="relative">
-                                <pre
-                                    class="w-full overflow-hidden font-medium bg-gray-800 text-gray-400 rounded-lg p-2 my-2 text-nowrap text-ellipsis pr-10"><code>Route::get('/', function () {
+                            </x-card-view.code-view>
+                            <x-.buttons.button-copy class="px-4 h-10" />
+                        </div>
+                    </li>
+                    <li class="mb-4">
+                        <p class="text-green-400">Utilizando dois ou mais middlewares:</p>
+                        <div class="flex flex-col relative">
+                            <x-card-view.code-view>
+use App\Http\Middleware\First;
+use App\Http\Middleware\Second;
+
+Route::get('/', function () {
     // ...
-})->middleware([First::class, Second::class]);</code></pre>
-                                <button
-                                    class="absolute top-2 right-0 text-black text-center rounded-md px-4 h-10 cursor-pointer transition-colors duration-300 focus:bg-green-500"><i
-                                        class="fa-regular fa-copy text-gray-300"></i></button>
-                            </div>
-                            <div class="relative">
-                                <pre
-                                    class="w-full overflow-hidden font-medium bg-gray-800 text-gray-400 rounded-lg p-2 my-2 text-nowrap text-ellipsis pr-10"><code>Route::middleware([EnsureTokenIsValid::class])->group(function () {
+})->middleware([First::class, Second::class]);
+                            </x-card-view.code-view>
+                            <x-.buttons.button-copy class="px-4 h-10" />
+                        </div>
+                    </li>
+                    <li class="mb-4">
+                        <p class="text-green-400">Agrupando em um ou mais processos de Middlewares ou anulando o processo
+                            dentro do grupo:</p>
+                        <div class="flex flex-col relative">
+                            <x-card-view.code-view>
+use App\Http\Middleware\EnsureTokenIsValid;
+
+Route::middleware([EnsureTokenIsValid::class])->group(function () {
     Route::get('/', function () {
         // ...
     })->withoutMiddleware([EnsureTokenIsValid::class]);
@@ -118,11 +135,33 @@ return view('nome_da_view');
     Route::get('/profile', function () {
         // ...
     });
-});</code></pre>
-                                <button
-                                    class="absolute top-2 right-0 text-black text-center rounded-md px-4 h-10 cursor-pointer transition-colors duration-300 focus:bg-green-500"><i
-                                        class="fa-regular fa-copy text-gray-300"></i></button>
-                            </div>
+});
+                            </x-card-view.code-view>
+                            <x-.buttons.button-copy class="px-4 h-10" />
+                        </div>
+                    </li>
+                </ul>
+                <h5 class="text-xl underline font-bold mb-2 text-gray-300">Controller:</h5>
+                <ul class="text-gray-300">
+                    <li class="mb-4">
+                        <p class="text-green-400">Método de contrução automática de uma classe Controller pelo laravel::</p>
+                        <div class="flex flex-col relative">
+                            <x-card-view.code-view>
+                                php artisan make:controller Nome_do_controller
+                            </x-card-view.code-view>
+                            <x-.buttons.button-copy class="px-4 h-10" />
+                        </div>
+                    </li>
+                </ul>
+                <h5 class="text-xl underline font-bold mb-2 text-gray-300">Service/Provider:</h5>
+                <ul class="text-gray-300">
+                    <li class="mb-4">
+                        <p class="text-green-400">Método de contrução automática de uma classe Controller pelo laravel::</p>
+                        <div class="flex flex-col relative">
+                            <x-card-view.code-view>
+                                php artisan make:provider Nome_do_provider
+                            </x-card-view.code-view>
+                            <x-.buttons.button-copy class="px-4 h-10" />
                         </div>
                     </li>
                 </ul>
@@ -134,50 +173,38 @@ return view('nome_da_view');
                         <p class="text-green-400">Executando a(as) migration(s) para configurar a estrutura do
                             banco de
                             dados</p>
-                        <div class="flex flex-col">
-                            <div class="relative">
-                                <pre
-                                    class="w-full overflow-hidden font-medium bg-gray-800 text-gray-400 rounded-lg p-2 my-2 text-nowrap text-ellipsis pr-10"><code>php artisan migrate</code></pre>
-                                <button
-                                    class="absolute top-2 right-0 text-black text-center rounded-md px-4 h-10 cursor-pointer transition-colors duration-300 focus:bg-green-500"><i
-                                        class="fa-regular fa-copy text-gray-300"></i></button>
-                            </div>
+                        <div class="flex flex-col relative">
+                            <x-card-view.code-view>
+                                php artisan migrate
+                            </x-card-view.code-view>
+                            <x-.buttons.button-copy class="px-4 h-10" />
                         </div>
                     </li>
                     <li class="mb-4">
                         <p class="text-green-400">Criar um arquivo migration</p>
-                        <div class="flex flex-col">
-                            <div class="relative">
-                                <pre
-                                    class="w-full overflow-hidden font-medium bg-gray-800 text-gray-400 rounded-lg p-2 my-2 text-nowrap text-ellipsis pr-10"><code>php artisan make:migration Nome_da_migration</code></pre>
-                                <button
-                                    class="absolute top-2 right-0 text-black text-center rounded-md px-4 h-10 cursor-pointer transition-colors duration-300 focus:bg-green-500"><i
-                                        class="fa-regular fa-copy text-gray-300"></i></button>
-                            </div>
+                        <div class="flex flex-col relative">
+                            <x-card-view.code-view>
+                                php artisan make:migration Nome_da_migration
+                            </x-card-view.code-view>
+                            <x-.buttons.button-copy class="px-4 h-10" />
                         </div>
                     </li>
                     <li class="mb-4">
                         <p class="text-green-400">Preencher o banco de dados com dados base ou teste</p>
-                        <div class="flex flex-col">
-                            <div class="relative">
-                                <pre
-                                    class="w-full overflow-hidden font-medium bg-gray-800 text-gray-400 rounded-lg p-2 my-2 text-nowrap text-ellipsis pr-10"><code>php artisan db:seed</code></pre>
-                                <button
-                                    class="absolute top-2 right-0 text-black text-center rounded-md px-4 h-10 cursor-pointer transition-colors duration-300 focus:bg-green-500"><i
-                                        class="fa-regular fa-copy text-gray-300"></i></button>
-                            </div>
+                        <div class="flex flex-col relative">
+                            <x-card-view.code-view>
+                                php artisan db:seed
+                            </x-card-view.code-view>
+                            <x-.buttons.button-copy class="px-4 h-10" />
                         </div>
                     </li>
                     <li class="mb-4">
                         <p class="text-green-400">Criar um arquivo Seed</p>
-                        <div class="flex flex-col">
-                            <div class="relative">
-                                <pre
-                                    class="w-full overflow-hidden font-medium bg-gray-800 text-gray-400 rounded-lg p-2 my-2 text-nowrap text-ellipsis pr-10"><code>php artisan make:seed Nome_da_seed</code></pre>
-                                <button
-                                    class="absolute top-2 right-0 text-black text-center rounded-md px-4 h-10 cursor-pointer transition-colors duration-300 focus:bg-green-500"><i
-                                        class="fa-regular fa-copy text-gray-300"></i></button>
-                            </div>
+                        <div class="flex flex-col relative">
+                            <x-card-view.code-view>
+                                php artisan make:seed Nome_da_seed
+                            </x-card-view.code-view>
+                            <x-.buttons.button-copy class="px-4 h-10" />
                         </div>
                     </li>
                 </ul>
