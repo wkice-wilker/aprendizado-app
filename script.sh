@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# Função para excluir uma linha contendo um termo específico
+# FunÃ§Ã£o para excluir uma linha contendo um termo especï¿½fico
 excluir_linha() {
     arquivo="$1"
     termo="$2"
 
     sed -i "/$termo/d" "$arquivo"
-    echo "Linha contendo '$termo' excluída do arquivo $arquivo."
+    echo "Linha contendo '$termo' excluï¿½da do arquivo $arquivo."
 }
 
-# Função para alterar um termo antigo por um novo em uma linha
+# FunÃ§Ã£o para alterar um termo antigo por um novo em uma linha
 alterar_termo() {
     arquivo="$1"
     termo_antigo="$2"
