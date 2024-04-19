@@ -22,6 +22,6 @@ alterar_termo() {
 alterar_termo .env "DB_CONNECTION=mysql" "DB_CONNECTION=pgsql"
 alterar_termo .env "DB_HOST=127.0.0.1" "DB_HOST=postgres"
 alterar_termo .env "DB_PORT=3306" "DB_PORT=5432"
-alterar_termo .env "DB_DATABASE=laravel" "DB_DATABASE=ead"
+alterar_termo .env "DB_DATABASE=laravel" "DB_DATABASE=aprendizado"
 alterar_termo .env "DB_USERNAME=root" "DB_USERNAME=postgres"
-alterar_termo .env "DB_PASSWORD=" "DB_PASSWORD=root-aprendizado"
+alterar_termo .env "DB_PASSWORD=" "DB_PASSWORD=pgaprendizado"
