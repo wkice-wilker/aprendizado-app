@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# FunÃ§Ã£o para excluir uma linha contendo um termo especï¿½fico
+# Função para excluir uma linha contendo um termo específico
 excluir_linha() {
     arquivo="$1"
     termo="$2"
@@ -9,7 +9,7 @@ excluir_linha() {
     echo "Linha contendo '$termo' excluï¿½da do arquivo $arquivo."
 }
 
-# FunÃ§Ã£o para alterar um termo antigo por um novo em uma linha
+# Função para alterar um termo antigo por um novo em uma linha
 alterar_termo() {
     arquivo="$1"
     termo_antigo="$2"
