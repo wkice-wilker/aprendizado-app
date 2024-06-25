@@ -23,7 +23,7 @@
         </nav>
     </header>
 
-    <section class="flex flex-wrap justify-center items-center rounded-l-full lg:bg-gray-900">
+    <section class="flex flex-wrap justify-center items-center rounded-t-full min-lg:rounded-l-full max-lg:-mt-6 max-lg:pt-5 bg-gray-900">
         <img src="{{asset('images/svg/dev/develop-in-desktop.svg')}}" alt="dev-login-image" class="w-[30%]">
         <div class="w-full lg:w-1/2 flex items-center justify-center rounded-xl">
             <div class="max-w-md w-full p-6">

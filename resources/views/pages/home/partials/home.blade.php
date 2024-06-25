@@ -1,7 +1,7 @@
 @extends('pages.home.home')
 
 @section('home')
-    <section class="mx-auto py-8">
+    {{-- <section class="mx-auto py-8">
 
-    </section>
+    </section> --}}
 @endsection
