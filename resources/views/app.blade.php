@@ -15,7 +15,7 @@
 
     {{-- Dashboad --}}
 
-    {{-- paginas com controle de sessao --}}
+    {{-- Livros --}}
 
     {{-- studies --}}
 

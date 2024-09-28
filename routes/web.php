@@ -20,7 +20,7 @@ Route::get('/Docker', function () {
     return view('pages.home.partials.docker');
 });
 Route::get('/Laravel', function () {
-    return view('pages.home.partials.laravel');
+    return view('pages.home.partials.Livros');
 });
 Route::get('/Arquitetura', function () {
     return view('pages.home.partials.arquitetura');

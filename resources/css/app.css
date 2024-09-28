@@ -45,3 +45,82 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+
+
+/*fiz a partir daqui*/
+
+body{
+    font-family: 'ubuntu';
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+.publicacoes {
+    width: 66%;
+}
+
+.publicacao {
+    background-color: #4f5163;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    min-height: 900px;
+}
+
+.publicacao h2 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 50px;
+    font-family: 'ubuntu';
+}
+
+.publicacao img {
+	display: block;
+    width: 30%;
+    height: auto;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.publicacao p{
+    font-size: 16px;
+    font-family: 'ubuntu';
+    margin-bottom: 10px;
+    line-height: 20px;
+    max-width: 800px; 
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify; 
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sidebar {
+    width: 30%;
+}
+
+.livro {
+    background-color: #4f5163;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.livro img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.livro button {
+    background-color: #38a169;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}

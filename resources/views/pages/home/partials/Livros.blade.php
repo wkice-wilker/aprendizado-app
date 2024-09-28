@@ -1,6 +1,6 @@
 @extends('pages.home.home')
 
-@section('laravel')
+@section('Livros')
     <article class="mx-2 md:mx-8 p-2 md:p-8 bg-gray-900 rounded-lg shadow-md shadow-2xl">
 
         <h2 class="text-center text-5xl font-bold mb-2 text-red-800">Laravel</h2>
