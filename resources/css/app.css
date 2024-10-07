@@ -104,23 +104,26 @@ body{
 }
 
 .livro {
-    background-color: #4f5163;
+    background-color: #111827;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .livro img {
-    width: 100%;
+    width: 60%;
     height: auto;
     margin-bottom: 20px;
     border-radius: 10px;
+    
 }
 
 .livro button {
     background-color: #38a169;
-    color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
 }

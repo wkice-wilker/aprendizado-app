@@ -19,11 +19,54 @@
             </ul>
         </div>
         <!-- Campo de busca, notificações -->
-        <div class="bg-gray-800 text-gray-300 py-1 w-80 rounded-full flex justify-between content-around">
-            <!-- Ícone de notificações -->
-            <button class="focus:outline-none ml-5">
-                <i class="fa fa-bell text-gray-300 hover:text-green-400 transition-colors duration-300 "></i>
-            </button>
+        <div class="bg-gray-800 text-gray-300 py-1 w-80 rounded-full flex justify-between mr-5">
+
+            <div class="flex justify-between content-around">
+                <!-- Ícone de mensagens -->
+                <div class="relative inline-block text-left justify-between content-around">
+
+                    <button type="button" class="focus:outline-none ml-5" onclick="toggleDropdown('messageDropdown')">
+                        <i class="fa fa-comment text-gray-300 hover:text-green-400 transition-colors duration-300"></i>
+                    </button>
+
+
+                    <ul id="messageDropdown"
+                        class="hidden absolute right-0 mt-2 w-48  z-10  text-black bg-transparent rounded-lg shadow-lg z-10 backdrop-blur-lg bg-white/30 border border-white/30">
+                        <li class="hover:bg-gray-100 rounded-t">
+                            <a href="#" class="block px-4 py-2 text-gray-900">Mensagem 1</a>
+                        </li>
+                        <li class="hover:bg-gray-100">
+                            <a href="#" class="block px-4 py-2 text-gray-900">Mensagem 2</a>
+                        </li>
+                        <li class="hover:bg-gray-100 rounded-b">
+                            <a href="#" class="block px-4 py-2 text-gray-900">Mensagem 3</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Ícone de notificações -->
+                <div class="relative inline-block text-left justify-between content-around">
+                    <button class="focus:outline-none ml-5" onclick="toggleDropdown('NotificationDropdown')">
+                        <i class="fa fa-bell text-gray-300 hover:text-green-400 transition-colors duration-300 "></i>
+                    </button>
+                    <ul id="NotificationDropdown"
+                        class="hidden absolute right-0 mt-2 w-96 items-center bg-white rounded-lg shadow-lg  text-black bg-transparent rounded-lg shadow-lg z-10 backdrop-blur-lg bg-white/30 border border-white/30">
+                        <li class="group/item hover:bg-slate-100 cursor-pointer flex items-center px-4 py-2 rounded-lg">
+                        <img src="{{asset('images/svg/dev/senhor dos aneis.webp')}}" alt="Publicação"
+                            class="rounded-lg w-20 h-30 mr-3">
+                        <div class="flex flex-col">
+                            <a href="#" class="font-bold text-green-400 mb-2">Emprestimo em Atraso:</a>
+                            <a href="#" class="text-gray-900 font-semibold">Senhor dos Aneis</a>
+                            <p class="text-gray-900 text-sm">A Sociedade do Anel</p>
+                            <Label class="flex items-center gap-2 mt-5">
+                                <img src="{{asset('../images/svg/dev/avatar.png')}}" alt="Avatar do usuário" class="w-8 h-8 rounded-full bg-red-900">
+                                <p class="text-gray-900 text-sm">Wilker Silva</p>
+                            </label>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </div>
 
             <!-- Campo de busca -->
             <div class="relative">
@@ -91,8 +134,28 @@
                     pesquisa.classList.add('hidden');
                 }
             });
+
+            function toggleDropdown(dropdownId) {
+                const dropdown = document.getElementById(dropdownId);
+                dropdown.classList.toggle('hidden');
+            }
+
+            // Fecha os dropdowns ao clicar fora deles
+            window.onclick = function(event) {
+                if (!event.target.matches('.fa')) {
+                    const dropdowns = document.querySelectorAll('ul[id$="Dropdown"]');
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.add('hidden');
+                    });
+                }
+            }
             </script>
         </div>
+            <!-- ícone de configuração-->
+        <button class="focus:outline-none">
+            <i class="fa fa-cog fa-lg text-gray-300 hover:text-green-400 transition-colors duration-300 mr-5"></i>
+        </button>
+
 
         <!-- Tag do usuário -->
         <div class="flex items-center gap-2">
@@ -149,19 +212,19 @@
     </div>
 
     <!-- Barra lateral de Livros -->
-    <aside class="sidebar w-1/4 p-4">
-        <div class="livro bg-gray-800 text-gray-300 p-4 rounded-lg mb-6">
+    <aside class="sidebar p-4 flex flex-col ">
+        <div class="livro text-gray-300 p-4 rounded-lg mb-6">
             <img src="{{asset('images/svg/dev/develop-in-desktop.svg')}}" alt="Livro X"
                 class="mb-4 rounded-lg self-center">
             <p class="mb-2">Livro X</p>
-            <button class="bg-green-500 text-white px-4 py-2 rounded-lg">Ver</button>
+            <button class="bg-green-500 text-gray-900 bold px-4 py-2 rounded-lg">Ver</button>
         </div>
 
-        <div class="livro bg-gray-800 text-gray-300 p-4 rounded-lg mb-6">
+        <div class="livro  text-gray-300 p-4 rounded-lg mb-6">
             <img src="{{asset('images/svg/dev/develop-in-desktop.svg')}}" alt="Livro X"
                 class="mb-4 rounded-lg  w-[10px] h-[10px]">
             <p class="mb-2">Livro X</p>
-            <button class="bg-green-500 text-white px-4 py-2 rounded-lg">Ver</button>
+            <button class="bg-green-500 text-gray-900  px-4 py-2 rounded-lg">Ver</button>
         </div>
     </aside>
 </section>
